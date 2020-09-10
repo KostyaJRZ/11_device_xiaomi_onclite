@@ -347,6 +347,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     camera.msm8953_shim
 
+# Signapk
+PRODUCT_HOST_PACKAGES += \
+    signapk
+
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
