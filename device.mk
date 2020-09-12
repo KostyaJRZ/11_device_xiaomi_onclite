@@ -33,7 +33,6 @@ TARGET_SCREEN_WIDTH := 720
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -70,8 +69,7 @@ PRODUCT_COPY_FILES += \
 
 # ANT
 PRODUCT_PACKAGES += \
-    AntHalService \
-    com.dsi.ant.antradio_library
+    AntHalService
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -150,10 +148,6 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     vendor.display.config@1.9
 
-# Doze mode
-PRODUCT_PACKAGES += \
-    XiaomiDoze
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
@@ -212,6 +206,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
     $(LOCAL_PATH)/configs/idc/uinput-goodix.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-goodix.idc
+
+# Kernel
+PRODUCT_COPY_FILES += device/xiaomi/onclite-kernel/Image.gz:kernel
+PRODUCT_VENDOR_KERNEL_HEADERS := device/xiaomi/onclite-kernel/sdm632/kernel-headers
 
 # keylayout
 PRODUCT_COPY_FILES += \
