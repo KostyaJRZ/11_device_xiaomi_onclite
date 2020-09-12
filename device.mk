@@ -118,6 +118,10 @@ PRODUCT_PACKAGES += \
     libbthost_if \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor
 
+# Binder
+PRODUCT_PACKAGES += \
+    libhwbinder.vendor
+
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
